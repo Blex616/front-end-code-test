@@ -1,0 +1,38 @@
+.selector {
+  color: black;
+  border-radius: 48px;
+  width: 50px;
+  height: 50px;
+  border-style: solid;
+  cursor: pointer;
+  p {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+  }
+}
+
+.card {
+  height: 379px;
+}
+
+.in-center {
+  padding-top: 60px;
+}
+
+@media (max-width: 576px) {
+  .card {
+    height: 310px;
+  }
+  .ball-container {
+    padding-top: 15px;
+    margin: auto;
+    width: 50%;
+  }
+  .in-center {
+    padding-top: 0px;
+  }
+  .clear-selection.p-5 {
+    padding: 0rem !important;
+  }
+}

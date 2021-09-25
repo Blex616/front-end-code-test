@@ -1,0 +1,56 @@
+<div class="row m-4">
+  <div class="col-xl-6 col-xxl-6" *ngIf="!winOrLose.text; else result">
+    <div class="card">
+      <div class="card-header">Numbers</div>
+      <div class="in-center">
+        <div class="row justify-content-center ball-container">
+          <div
+            class="col-4 col-sm-1 col-md-1"
+            *ngFor="let item of balls | async; index as i"
+          >
+            <div
+              class="selector"
+              (click)="addItem(item.value)"
+              [style.background-color]="item.color"
+            >
+              <p>{{ item.value }}</p>
+            </div>
+          </div>
+        </div>
+        <h5 class="d-flex justify-content-center m-3 clear-selection p-5">
+          <a href="#" (click)="itemsSelected = []">Clear selection</a>
+        </h5>
+      </div>
+    </div>
+  </div>
+  <ng-template #result>
+    <div class="col-xl-6 col-xxl-6">
+      <div class="card">
+        <div class="card-header">Result</div>
+        <div class="row justify-content-center p-5">
+          <div class="col-4 col-sm-1 col-md-1 m-4 ps-2 ps-sm-1 ps-lg-1">
+            <div
+              class="selector"
+              [style.background-color]="
+                functions.getColor(balls, winOrLose.number).color
+              "
+            >
+              <p>{{ winOrLose.number }}</p>
+            </div>
+          </div>
+          <h5 class="text-center p-2" [style.color]="winOrLose.color">
+            {{ winOrLose.text }}
+          </h5>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <div class="col-xl-6 col-xxl-6">
+    <app-bet-slip
+      [itemsSelected]="itemsSelected"
+      [balls]="balls"
+      (winOrLoseEvent)="showWinOrLose($event)"
+    >
+    </app-bet-slip>
+  </div>
+</div>

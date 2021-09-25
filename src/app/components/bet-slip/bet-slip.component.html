@@ -1,0 +1,44 @@
+<div class="card">
+  <div class="row justify-content-center p-3">
+    <div class="col p-0" *ngFor="let item of itemsSelected">
+      <div
+        class="ball-selected"
+        (click)="dropSelection(item)"
+        [style.background-color]="functions.getColor(balls, item).color"
+      >
+        <p>{{ item }}</p>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center" *ngIf="!itemsSelected.length">
+      <p>No number selected</p>
+    </div>
+  </div>
+  <div class="container p-4">
+    <div class="input-group mb-3">
+      <label class="input-group-text">X5</label>
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Value"
+        aria-label="Value"
+        aria-describedby="button-addon2"
+        [(ngModel)]="betValue"
+      />
+      <button
+        class="btn btn-primary"
+        type="button"
+        id="button-addon2"
+        (click)="totalValue()"
+      >
+        Ok
+      </button>
+    </div>
+  </div>
+</div>
+<p class="text-center pt-1">Your Money: {{ moneyAvailable }} €</p>
+<p class="text-center pt-1">Total Bet: {{ totalBetValue }} €</p>
+<div class="d-grid gap-2 play-bet">
+  <button class="btn btn-primary m-5" type="button" (click)="playBet()">
+    Place Bet
+  </button>
+</div>

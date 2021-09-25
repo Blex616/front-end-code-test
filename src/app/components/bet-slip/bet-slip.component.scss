@@ -1,0 +1,47 @@
+.ball-selected {
+  width: 40px;
+  height: 40px;
+  border-radius: 48px;
+  cursor: pointer;
+  border-style: solid;
+  p {
+    display: flex;
+    justify-content: center;
+    margin: 6px;
+  }
+}
+
+.col {
+  flex: 0 0 auto;
+  width: 6%;
+  margin-right: 10px;
+}
+
+.card {
+  height: 215px;
+}
+
+.play-bet {
+  position: relative;
+  bottom: 50px;
+}
+
+@media (max-width: 576px) {
+  .col {
+    flex: 0 0 auto;
+    width: 6%;
+    margin-right: 15px;
+  }
+  .ball-selected {
+    width: 30px;
+    height: 30px;
+    border-radius: 48px;
+    cursor: pointer;
+    border-style: solid;
+    p {
+      display: flex;
+      justify-content: center;
+      margin: 0px;
+    }
+  }
+}
