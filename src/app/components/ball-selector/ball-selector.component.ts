@@ -41,4 +41,9 @@ export class BallSelectorComponent implements OnInit {
     this.itemsSelected.push(itemSelected)
   }
 
+  reset() {
+    this.winOrLose = new WinOrLose;
+    this.itemsSelected = new Array;
+  }
+
 }
