@@ -18,7 +18,7 @@ export class BallSelectorComponent implements OnInit {
   winOrLose: WinOrLose;
 
   constructor(public functions: Functions, private ballService: BallService) {
-    this.balls = this.ballService.getBalls()
+    this.balls = this.ballService.getBalls();
     this.itemsSelected = new Array;
     this.winOrLose = new WinOrLose;
   }
@@ -38,7 +38,7 @@ export class BallSelectorComponent implements OnInit {
       alertify.warning('You have already selected this number');
       return
     }
-    this.itemsSelected.push(itemSelected)
+    this.itemsSelected.push(itemSelected);
   }
 
   reset() {
